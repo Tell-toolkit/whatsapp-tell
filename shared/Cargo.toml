@@ -1,0 +1,29 @@
+[package]
+name = "shared"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Shared types and utilities for WhatsApp-Tell service"
+
+[dependencies]
+# Workspace dependencies
+aws-config.workspace = true
+aws-sdk-s3.workspace = true
+aws-sdk-dynamodb.workspace = true
+aws-sdk-sqs.workspace = true
+aws-sdk-lambda.workspace = true
+aws-sdk-kms.workspace = true
+aws-sdk-secretsmanager.workspace = true
+
+tokio.workspace = true
+reqwest.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+chrono.workspace = true
+uuid.workspace = true

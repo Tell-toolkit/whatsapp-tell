@@ -1,0 +1,31 @@
+[package]
+name = "gateway"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "WhatsApp webhook gateway and message handling"
+
+[dependencies]
+# Workspace dependencies
+shared = { path = "../shared" }
+aws-config.workspace = true
+aws-sdk-s3.workspace = true
+aws-sdk-dynamodb.workspace = true
+aws-sdk-sqs.workspace = true
+
+tokio.workspace = true
+reqwest.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+chrono.workspace = true
+uuid.workspace = true
+hmac.workspace = true
+sha2.workspace = true
+hex.workspace = true
+lambda_runtime.workspace = true
+lambda_http.workspace = true

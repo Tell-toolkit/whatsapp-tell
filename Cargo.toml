@@ -1,0 +1,56 @@
+[workspace]
+members = [
+    "gateway",
+    "processor", 
+    "reporting",
+    "shared"
+]
+resolver = "2"
+
+[workspace.dependencies]
+# AWS SDK dependencies
+aws-config = "1.1"
+aws-sdk-s3 = "1.20"
+aws-sdk-dynamodb = "1.20"
+aws-sdk-sqs = "1.20"
+aws-sdk-lambda = "1.20"
+aws-sdk-kms = "1.20"
+aws-sdk-secretsmanager = "1.20"
+
+# HTTP and async runtime
+tokio = { version = "1.0", features = ["full"] }
+reqwest = { version = "0.11", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Tracing and observability
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Time and UUID
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.0", features = ["v4", "serde"] }
+
+# WhatsApp API and webhook validation
+hmac = "0.12"
+sha2 = "0.10"
+hex = "0.4"
+
+# Lambda runtime
+lambda_runtime = "0.8"
+lambda_http = "0.8"
+
+# PDF generation
+wkhtmltopdf = "0.3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Tell-toolkit <info@tell-toolkit.org>"]
+license = "MIT"
+repository = "https://github.com/Tell-toolkit/whatsapp-tell"
+description = "WhatsApp Audio Neurocognitive Markers Service"

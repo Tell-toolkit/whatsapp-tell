@@ -1,0 +1,27 @@
+[package]
+name = "processor"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Audio processing orchestration and Lambda invocation"
+
+[dependencies]
+# Workspace dependencies
+shared = { path = "../shared" }
+aws-config.workspace = true
+aws-sdk-s3.workspace = true
+aws-sdk-dynamodb.workspace = true
+aws-sdk-sqs.workspace = true
+aws-sdk-lambda.workspace = true
+
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+chrono.workspace = true
+uuid.workspace = true
+lambda_runtime.workspace = true
