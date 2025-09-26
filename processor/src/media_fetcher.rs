@@ -1,8 +1,8 @@
 //! Media fetching from WhatsApp API
 
-use shared::types::Message;
-use shared::errors::Result;
 use shared::aws::AwsClients;
+use shared::errors::Result;
+use shared::types::Message;
 use tracing::info;
 
 /// Fetches media from WhatsApp API and stores in S3
@@ -22,11 +22,11 @@ impl MediaFetcher {
     /// Fetches media from WhatsApp and stores in S3
     pub async fn fetch_and_store_media(&self, message: &Message) -> Result<String> {
         info!("Fetching media for message: {}", message.id);
-        
+
         // TODO: Implement media fetching from WhatsApp API
         // TODO: Store in S3 with proper encryption
         // TODO: Return S3 key
-        
+
         Ok("s3://bucket/key".to_string())
     }
 
@@ -36,7 +36,7 @@ impl MediaFetcher {
         // - Check supported formats (audio: ogg/opus, m4a, wav)
         // - Check size limits (max 16MB for WhatsApp)
         // - Validate audio duration limits
-        
+
         Ok(())
     }
 }

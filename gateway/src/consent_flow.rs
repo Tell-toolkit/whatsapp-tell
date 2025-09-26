@@ -1,7 +1,7 @@
 //! WhatsApp consent flow management
 
-use shared::types::{Consent, ConversationState};
 use shared::errors::Result;
+use shared::types::{Consent, ConversationState};
 use tracing::info;
 
 /// Manages consent flow for WhatsApp conversations
@@ -28,7 +28,10 @@ impl ConsentFlow {
         consent_granted: bool,
         consent_options: ConsentOptions,
     ) -> Result<Consent> {
-        info!("Processing consent response for conversation: {}", conversation_id);
+        info!(
+            "Processing consent response for conversation: {}",
+            conversation_id
+        );
         // TODO: Implement consent processing
         Ok(Consent {
             id: uuid::Uuid::new_v4(),

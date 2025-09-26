@@ -1,8 +1,8 @@
 //! Audio processing orchestration
 
-use shared::types::{Message, MarkerSet};
-use shared::errors::Result;
 use shared::aws::AwsClients;
+use shared::errors::Result;
+use shared::types::{MarkerSet, Message};
 use tracing::info;
 
 /// Orchestrates audio processing pipeline
@@ -18,13 +18,13 @@ impl AudioProcessor {
     /// Processes audio file and extracts neurocognitive markers
     pub async fn process_audio(&self, s3_key: &str, message: &Message) -> Result<MarkerSet> {
         info!("Processing audio: {}", s3_key);
-        
+
         // TODO: Implement audio processing pipeline
         // 1. Call preprocessing Lambda
         // 2. Call feature extraction Lambda
         // 3. Call aggregation Lambda
         // 4. Return MarkerSet
-        
+
         Ok(MarkerSet {
             id: uuid::Uuid::new_v4(),
             conversation_id: message.conversation_id.clone(),

@@ -1,7 +1,7 @@
 //! WhatsApp message handling and processing
 
-use shared::types::{Message, MessageType, ConversationState};
 use shared::errors::Result;
+use shared::types::{ConversationState, Message, MessageType};
 use tracing::info;
 
 /// Handles incoming WhatsApp messages
@@ -17,7 +17,7 @@ impl MessageHandler {
     /// Processes an incoming WhatsApp message
     pub async fn handle_message(&self, message: Message) -> Result<()> {
         info!("Processing message: {}", message.id);
-        
+
         match &message.message_type {
             MessageType::Text { body } => {
                 self.handle_text_message(&message, body).await?;
@@ -32,7 +32,7 @@ impl MessageHandler {
                 self.handle_image_message(&message).await?;
             }
         }
-        
+
         Ok(())
     }
 

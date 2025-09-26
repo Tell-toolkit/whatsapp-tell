@@ -1,7 +1,7 @@
 //! Report generation for neurocognitive markers
 
-use shared::types::MarkerSet;
 use shared::errors::Result;
+use shared::types::MarkerSet;
 use tracing::info;
 
 /// Generates reports from neurocognitive marker analysis
@@ -17,10 +17,10 @@ impl ReportGenerator {
     /// Generates a brief WhatsApp report
     pub fn generate_brief_report(&self, markers: &MarkerSet) -> Result<String> {
         info!("Generating brief report for markers: {}", markers.id);
-        
+
         // TODO: Implement brief report generation
         // Format: 3-5 bullet points with plain language explanations
-        
+
         Ok(format!(
             "📊 *Análisis de Voz Completado*\n\n\
             • Velocidad del habla: {:.1} sílabas/seg\n\
@@ -38,10 +38,10 @@ impl ReportGenerator {
     /// Generates a detailed PDF report
     pub async fn generate_detailed_report(&self, markers: &MarkerSet) -> Result<Vec<u8>> {
         info!("Generating detailed PDF report for markers: {}", markers.id);
-        
+
         // TODO: Implement PDF report generation
         // Include detailed analysis, charts, and recommendations
-        
+
         Ok(b"PDF content placeholder".to_vec())
     }
 }

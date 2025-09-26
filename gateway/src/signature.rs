@@ -2,7 +2,7 @@
 
 use hmac::{Hmac, Mac};
 use sha2::Sha256;
-use shared::errors::{WhatsAppTellError, Result};
+use shared::errors::{Result, WhatsAppTellError};
 
 type HmacSha256 = Hmac<Sha256>;
 
@@ -22,9 +22,9 @@ impl SignatureValidator {
             .map_err(|_| WhatsAppTellError::InvalidSignature)?;
 
         mac.update(payload.as_bytes());
-        
+
         let expected_signature = format!("sha256={}", hex::encode(mac.finalize().into_bytes()));
-        
+
         if signature == expected_signature {
             Ok(())
         } else {

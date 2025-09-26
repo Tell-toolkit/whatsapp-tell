@@ -1,7 +1,7 @@
 //! Lambda orchestration for audio processing
 
-use shared::errors::Result;
 use shared::aws::AwsClients;
+use shared::errors::Result;
 use tracing::info;
 
 /// Orchestrates Lambda function invocations
@@ -33,7 +33,10 @@ impl LambdaOrchestrator {
     }
 
     /// Invokes aggregation Lambda
-    pub async fn invoke_aggregation(&self, features: serde_json::Value) -> Result<serde_json::Value> {
+    pub async fn invoke_aggregation(
+        &self,
+        features: serde_json::Value,
+    ) -> Result<serde_json::Value> {
         info!("Invoking aggregation Lambda");
         // TODO: Implement Lambda invocation
         Ok(features)

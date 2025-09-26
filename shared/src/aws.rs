@@ -1,12 +1,12 @@
 //! AWS client configurations and utilities
 
 use aws_config::meta::region::RegionProviderChain;
-use aws_sdk_s3::Client as S3Client;
 use aws_sdk_dynamodb::Client as DynamoDbClient;
-use aws_sdk_sqs::Client as SqsClient;
-use aws_sdk_lambda::Client as LambdaClient;
 use aws_sdk_kms::Client as KmsClient;
+use aws_sdk_lambda::Client as LambdaClient;
+use aws_sdk_s3::Client as S3Client;
 use aws_sdk_secretsmanager::Client as SecretsManagerClient;
+use aws_sdk_sqs::Client as SqsClient;
 
 use crate::errors::Result;
 
@@ -23,8 +23,7 @@ pub struct AwsClients {
 impl AwsClients {
     /// Create AWS clients with default configuration
     pub async fn new() -> Result<Self> {
-        let region_provider = RegionProviderChain::default_provider()
-            .or_else("sa-east-1"); // Default to São Paulo region for AR/UY
+        let region_provider = RegionProviderChain::default_provider().or_else("sa-east-1"); // Default to São Paulo region for AR/UY
 
         let config = aws_config::defaults(aws_config::BehaviorVersion::latest())
             .region(region_provider)

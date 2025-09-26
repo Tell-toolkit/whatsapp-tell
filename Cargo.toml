@@ -45,7 +45,7 @@ lambda_runtime = "0.8"
 lambda_http = "0.8"
 
 # PDF generation
-wkhtmltopdf = "0.3"
+wkhtmltopdf = "0.4"
 
 [workspace.package]
 version = "0.1.0"

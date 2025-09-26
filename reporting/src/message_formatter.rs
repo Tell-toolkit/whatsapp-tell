@@ -1,7 +1,7 @@
 //! WhatsApp message formatting
 
-use shared::types::MarkerSet;
 use shared::errors::Result;
+use shared::types::MarkerSet;
 use tracing::info;
 
 /// Formats messages for WhatsApp delivery
@@ -17,13 +17,13 @@ impl MessageFormatter {
     /// Formats a brief report for WhatsApp
     pub fn format_brief_report(&self, markers: &MarkerSet) -> Result<String> {
         info!("Formatting brief report for WhatsApp");
-        
+
         // TODO: Implement WhatsApp-specific formatting
         // - Use appropriate emojis
         // - Keep within WhatsApp message limits
         // - Include clear disclaimers
         // - Add call-to-action buttons if needed
-        
+
         Ok(format!(
             "📊 *Análisis Completado*\n\n\
             🗣️ Velocidad: {:.1} sílabas/seg\n\
@@ -42,7 +42,7 @@ impl MessageFormatter {
     /// Formats consent request message
     pub fn format_consent_request(&self) -> Result<String> {
         info!("Formatting consent request message");
-        
+
         Ok(
             "🔒 *Consentimiento para Análisis de Voz*\n\n\
             Para analizar tu voz y proporcionar información sobre marcadores neurocognitivos, necesitamos tu consentimiento explícito.\n\n\

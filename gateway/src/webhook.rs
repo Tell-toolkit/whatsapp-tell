@@ -15,7 +15,7 @@ impl WebhookHandler {
 
     pub async fn handle_webhook(&self, request: Request) -> Result<Response<String>, Error> {
         info!("Received webhook request");
-        
+
         // TODO: Implement webhook processing
         Ok(Response::builder()
             .status(200)
