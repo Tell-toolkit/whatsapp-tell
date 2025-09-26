@@ -9,6 +9,12 @@ pub struct MessageFormatter {
     // TODO: Add formatting configuration
 }
 
+impl Default for MessageFormatter {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl MessageFormatter {
     pub fn new() -> Self {
         Self {}

@@ -9,6 +9,12 @@ pub struct ReportGenerator {
     // TODO: Add report configuration
 }
 
+impl Default for ReportGenerator {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl ReportGenerator {
     pub fn new() -> Self {
         Self {}

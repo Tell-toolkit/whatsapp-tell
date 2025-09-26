@@ -9,6 +9,12 @@ pub struct PdfGenerator {
     // TODO: Add PDF configuration
 }
 
+impl Default for PdfGenerator {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl PdfGenerator {
     pub fn new() -> Self {
         Self {}
@@ -32,7 +38,7 @@ impl PdfGenerator {
     /// Uploads PDF to S3 and returns pre-signed URL
     pub async fn upload_and_get_url(
         &self,
-        pdf_content: &[u8],
+        _pdf_content: &[u8],
         markers: &MarkerSet,
     ) -> Result<String> {
         info!("Uploading PDF to S3 for markers: {}", markers.id);

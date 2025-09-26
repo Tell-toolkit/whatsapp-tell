@@ -6,6 +6,7 @@ use tracing::info;
 
 /// Orchestrates Lambda function invocations
 pub struct LambdaOrchestrator {
+    #[allow(dead_code)]
     aws_clients: AwsClients,
 }
 

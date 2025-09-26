@@ -1,12 +1,18 @@
 //! WhatsApp consent flow management
 
 use shared::errors::Result;
-use shared::types::{Consent, ConversationState};
+use shared::types::Consent;
 use tracing::info;
 
 /// Manages consent flow for WhatsApp conversations
 pub struct ConsentFlow {
     // TODO: Add consent flow configuration
+}
+
+impl Default for ConsentFlow {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl ConsentFlow {
@@ -15,7 +21,7 @@ impl ConsentFlow {
     }
 
     /// Initiates consent request
-    pub async fn request_consent(&self, conversation_id: &str, user_phone: &str) -> Result<()> {
+    pub async fn request_consent(&self, conversation_id: &str, _user_phone: &str) -> Result<()> {
         info!("Requesting consent for conversation: {}", conversation_id);
         // TODO: Implement consent request
         Ok(())
@@ -25,7 +31,7 @@ impl ConsentFlow {
     pub async fn process_consent_response(
         &self,
         conversation_id: &str,
-        consent_granted: bool,
+        _consent_granted: bool,
         consent_options: ConsentOptions,
     ) -> Result<Consent> {
         info!(

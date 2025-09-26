@@ -7,7 +7,9 @@ use tracing::info;
 
 /// Fetches media from WhatsApp API and stores in S3
 pub struct MediaFetcher {
+    #[allow(dead_code)]
     aws_clients: AwsClients,
+    #[allow(dead_code)]
     whatsapp_token: String,
 }
 
@@ -31,7 +33,7 @@ impl MediaFetcher {
     }
 
     /// Validates media format and size
-    pub fn validate_media(&self, mime_type: &str, size: u64) -> Result<()> {
+    pub fn validate_media(&self, _mime_type: &str, _size: u64) -> Result<()> {
         // TODO: Implement media validation
         // - Check supported formats (audio: ogg/opus, m4a, wav)
         // - Check size limits (max 16MB for WhatsApp)

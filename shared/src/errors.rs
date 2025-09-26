@@ -58,4 +58,4 @@ pub enum WhatsAppTellError {
 }
 
 /// Result type alias for the service
-pub type Result<T> = std::result::Result<T, WhatsAppTellError>;
+pub type Result<T> = std::result::Result<T, Box<WhatsAppTellError>>;

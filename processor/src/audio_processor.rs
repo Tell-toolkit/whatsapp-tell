@@ -7,6 +7,7 @@ use tracing::info;
 
 /// Orchestrates audio processing pipeline
 pub struct AudioProcessor {
+    #[allow(dead_code)]
     aws_clients: AwsClients,
 }
 

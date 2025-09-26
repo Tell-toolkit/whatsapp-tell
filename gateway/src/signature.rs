@@ -28,7 +28,7 @@ impl SignatureValidator {
         if signature == expected_signature {
             Ok(())
         } else {
-            Err(WhatsAppTellError::InvalidSignature)
+            Err(Box::new(WhatsAppTellError::InvalidSignature))
         }
     }
 }

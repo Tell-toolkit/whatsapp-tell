@@ -1,12 +1,18 @@
 //! WhatsApp message handling and processing
 
 use shared::errors::Result;
-use shared::types::{ConversationState, Message, MessageType};
+use shared::types::{Message, MessageType};
 use tracing::info;
 
 /// Handles incoming WhatsApp messages
 pub struct MessageHandler {
     // TODO: Add message handler configuration
+}
+
+impl Default for MessageHandler {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl MessageHandler {
@@ -36,7 +42,7 @@ impl MessageHandler {
         Ok(())
     }
 
-    async fn handle_text_message(&self, message: &Message, body: &str) -> Result<()> {
+    async fn handle_text_message(&self, _message: &Message, body: &str) -> Result<()> {
         info!("Handling text message: {}", body);
         // TODO: Implement text message processing
         Ok(())
